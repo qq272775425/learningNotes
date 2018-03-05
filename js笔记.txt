@@ -1,0 +1,178 @@
+浏览器端让网页动态交互
+js不能运行在服务器端（node）除外
+处于安全性不能读取文件调用硬件
+
+变量
+
+存贮数据的东西
+使用var 声明一个变量
+var a = 5；
+
+
+var a;
+a=5；
+
+document.write 输出
+ 
+ 变量命名规范
+首字母不能是数字
+首字母以外的可以是字母数字下划线$
+不能出现空格 中文 关键字
+区分大小写
+
+数据类型
+基本 数字 字符串 布尔型 undefined 
+引用 
+
+字符串用+链接
+
+++自增 --自减、
+++a 先加一再自增
+var a = '' -"4"   等于0-4 空字符串转换成0
+ js中加法优先自动转换成字符串
+ 减法优先转换成数字，结果如果不是数字输出nan
+
+ 短路运算：逻辑与前面的代码返回fluse 后面的代码不会执行
+
+ typeof 返回数据类型
+ 非空字符串相当于true 
+ 非零数字相当于true
+ undefined相当于fluse
+  
+基本数据类型：
+	 字符串 数字 布尔 undefined none
+引用数据类型：
+	
+ECMAscript
+ecma 一种规定js属性的组织
+
+区分大小写
+弱类型
+结尾分号可有可无
+注释与java c PHP相同 // /* */
+花括号代表代码块，又是可以省略
+
+变量
+命名规范首字母不是数字
+首字母小写
+驼峰式
+
+var a=12
+var a=12，b=13
+
+匈牙利命名
+数组a
+布尔型b
+浮点f
+函数fn
+整形i
+对象o
+正则re
+字符串s
+变形v
+
+var 加与不加的区别
+全局变量使用deliete可以删除var 声明的变量，不可以删除未用var生命的变量
+在函数内部加var是局部变量 如果不加是全局变量
+
+值 类型与类型的转换
+原始值 存储在栈中 filo先进后出 （队列 fifo先进先出、）
+引用类型存放在堆中 存储对象
+用new声明的都是对象
+java中 string是引用类型
+js中 是基本数据类型
+
+
+字符串操作
+
+
+globa
+
+
+引用类型
+
+数据放在堆
+地址放在栈
+
+看w3cschool 对象参考手册array boolean   date   math   number   string   regexp  
+  
+函数式与面向对象
+
+
+函数也是也个对象
+
+js对象包括 1普通对象 2数组 3函数式
+
+function fnOne(){
+	
+}
+
+var fnTwo = function(){}
+
+typeof 测试数据类型 alert(typeof aa);
+
+形参 实参 
+函数声明 浏览器优先检测优先申明
+函数表达式 浏览器从上到下执行，执行到该句才运行
+
+argument
+
+闭包！！！！！！逢考必问！！！（closure）
+	定义：从表象向上来看，就是外部函数里面声明一个内部函数，内部函数使用外部函数中的局部变量，这使得外部函数中的局部变量在调用完毕后，不会被释放（回收），例如点击一个li弹出他的索引
+
+
+	尽量避免在window下声明全局变量 会造成全局变量污染
+	<script type="text/javascript">
+		function a() {
+			// body...
+			var c = 5;
+			var b = function(){
+				return c;		
+			};
+			return b;
+		}
+		var d=a();
+		alert(d()); 
+	</script>
+
+
+
+	<script type="text/javascript">
+		var oUl = document.getElementById('ul1');
+		var aLi = oUl.getElementsByTagName('li');
+		for (var i = 0; i < aLi.length; i++) {
+			
+			(function (index) {
+				aLi[i].onclick = function () {
+				alert(index);
+				};
+			})(i);
+			
+		}
+	</script>
+
+	函数立即调用：函数声明玩了直接调用。
+
+	(function(){
+	alert('asdasadasdasd');
+	})();
+
+	switch固定值
+	if 区间
+
+	for循环有4个
+
+	数组 索引下标 
+		concat()连接两个或更多数组，并返回结果
+		join()把数组所有元素放入一个字符串，元素通过指定的分割符进行分割
+		pop() 删除并返回数组的最后一个元素
+		push()想数组的末尾添加一个或更多元素，并返回新的长度
+		reverse()颠倒数组中元素的顺序
+		shift()删除并返回数组的第一一个元素
+		sort()对数组进行排序
+		splice()删除元素并向数组添加新元素
+		tostring()把数组转换成字符串返回结果
+		unshift()向数组头添加元素并返回长度
+
+
+	

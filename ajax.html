@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	
+</body>
+</html>
+
+
+
+
+
+
+
+XMLHttpRequest 对象 但是存在兼容性问题在ie5 ie6中使用ActiveXObject对象
+创建XMLHttpRequest 对象 ： xmlhttp = new XMLHttpRequest)();
+                           xmlhttp = new ActiveXObject("Microsoft.XHLHTTP")
+在XMLHttpRequest对象下有一系列属性和方法
+xmlhttp.open("get","url",true);    开启通道我要用get的方式向url建立一个异步的请求
+xmlhttp.send();  使用send方式传输
+
+
+能力检测 获取xmlhttp对象
+var xmlhttp;
+if(window.XMLHttpRequest){
+	xmlhttp = new XMLHttpRequest();
+}else{
+	xmlhttp = new ActiveXObject("Microsoft.XHLHTTP);
+}
+
+xmlhttp.open("post","url",true);    开启通道我要用post的方式向url建立一个异步的请求
+xmlhttp.setReauestHeader("Content-type","application/x-www-form-irlencoded"); 设置请求头
+xmlhttp.send("fname=Bill&lname=Gates");  需要传输的数据
+
+响应 服务器会响应一种格式 纯文本格式的数据  字符串 jason html标签
+
+onreadystatechange 事件  每当 readyState发生改变会调用这个回调函数。一般调用5次
+
+readyState 存储XMLHttpReauest 状态0-4 5个值
+0 请求未初始化
+1 服务器已连接
+2 请求已接受
+3 请求处理中
+4 请求完成 响应已就绪
+
+statues 状态码 200 ok 404 页面未找到
+
+
+get 会用明文显示在URL后面 不能超过250字符 
+post 大量数据 没有安全性问题
+
+xmlhttp.onreadystatechange = function(){
+	if(xmlhttp.readyState == 4&&xmlhttp.statues == 200){
+	//执行你的操作
+}
+};//ajax的回调函数   
+
+
+
+Ajax 的原理解释
+ajax是个什么概念呢 他是一个再不刷新网页的情况下从客户端到服务器端的一中技术，在地底层使用XMLHttpRequest对象，但是在早期的ie5 ie6 中使用ActiveXObject对象 new这个对象创建xmlhttp对象 ，在新创建的xmlhttp对象下有open send方法 有一个回调函数在回调函数中进行你的操作 
+
+封装自己的ajax函数 
+ajax(url,{},)
+
+
+
+
+
+

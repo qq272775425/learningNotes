@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<div id="app">
+		{{message}}//通过这样的指令方法实现列表指令组件渲染
+	</div>
+
+	<div id="example">
+		<my-component> </my-component> //vue.js的组件标签 不是html默认标签
+	</div>
+
+
+	<script type="text/javascript">
+		new Vue({
+			el:'#app',
+			data:{
+				message:'hello vue.js'
+			}
+		})
+
+
+		//定义
+		var MyComponent = Vue.extend({
+			template:'<div>A custom conponent!</div>'
+		})
+
+
+		//注册
+		Vue.component('my-component',MyComponent)
+
+		//创建根事例
+		new Vue ({
+			el:'#example'
+		})
+
+	</script>
+</body>
+</html>

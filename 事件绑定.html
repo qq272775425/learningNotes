@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<span id="btn">click</span>
+<script type="text/javascript">
+
+	var oBtn = document.getElementById('btn');
+	 
+	// oBtn.addEventListener('click',function(){
+	// 	alert('haha');
+	// 	//三个参数 第三个是true事件冒泡 false 事件捕获 IE不支持
+	// },false);
+
+
+
+	// oBtn.onclick = function(){
+	// 	alert('haha');
+	// }；
+	
+
+
+	// document.getElementById("btn").addEventListener('click', function(){
+	// 	alert('haha')
+	// }, false);
+
+
+	addEvent(oBtn,'click',function(){alert(11);});
+	addEvent(oBtn,'click',function(){alert(22);});
+
+	function addEvent(elem,type,handler){//事件冒泡写死了
+		if(elem.addEventListener){
+			elem.addEventListener(type,handler,false);
+		}else if(elem.attachEvent){
+			elem.fn = function(){
+				handler.call(elem);
+			};
+			elem.attachEvent('on'+type,elem.[type+handler]);
+		}else{
+			elem['on'+type] = handler;
+		}
+	}
+	//不能解决事件顺序混乱的问题，可以通过fifo的队列的形式存储提取事件函数
+</script>
+</body>
+</html> 

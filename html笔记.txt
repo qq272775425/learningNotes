@@ -1,0 +1,66 @@
+html 
+不同浏览器有兼容惯性差异
+IETEXTER
+浏览器内核	
+	IE Trident
+	Firfox Gecko
+	Chrome Safari Webkit blink
+双核浏览器 使用两个浏览器
+tizen 三星系统
+html 超文本标记语言 hyper text markup language
+标记是尖括号承兑出现
+常见标签 
+ 标题<h1>
+		 <h2>
+		 	<h3>
+		 		<h4>
+		 			<h5>
+		 				<h6>
+		 					标题	
+		 				</h6>
+		 			</h5>
+		 		</h4>
+		 	</h3>
+		 </h2>
+	</h1>
+	<p>段落</p>
+	<a href="地址">链接</a>href叫属性
+	<img src="">
+	<br />
+	<span></span>
+	<div></div>自包含标签没有开始只有结束的标签
+	跟标签 html、body radio sclect
+	textarea、tr、td、ul、ol
+
+
+html语义化
+	使用h1和使用p加一些样式可以达到相同的效果。
+	不同的标签有不同的语言含义
+	语义化给读者浏览器和搜索引擎浏览
+	有益于读者阅读，有益于浏览器上显示，有益于搜索引擎优化，
+	爬虫默认h1比较重要所以会有个比较大的权重值会优先搜索，可以给网页的关键词适当嵌套h1标签但是已经被百度屏蔽了
+文档类型
+	使用html5 html4 差别不大，但是如果不写在ie8级以前的版本会出现jscss的兼容性问题，但是在高级浏览器中不会有问题。
+	xhtml1.0 可拓展的超文本 更严格所有标签必须封闭 例如<br>
+	html4.01 
+	html5
+w3c 制定语言规范
+<head>中标签
+	<meta charset="utf-8">设置网页编码关键字啥的有十几种
+	<title></title>
+	<link rel="stylesheet" type="text/css" href="">
+	<script type="text/javascript"></script>
+
+</head>
+字符集
+	gb2312 国标中文字符集
+	gbk 包括繁体字
+	utf-8 六万多包括基本字符集
+属性小写
+实体
+	 &lt；小于
+	 &gt；大于
+	 &nbsp；空格
+链接包括：协议/域名/路径/文件
+http端口号80
+

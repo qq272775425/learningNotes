@@ -1,0 +1,42 @@
+DOM 版本 0 1 2 3 
+输入框有 name 属性
+getElementsByTagName
+getElementById
+getElementsByName
+getElementsByClassName 有兼容性问题 ie8用不了
+
+节点类型
+	元素节点
+	文本节点
+	属性节点
+	
+对象.属性
+
+children所有浏览器都支持 得到父元素所有节点不包括空格啥的
+
+firstChild父元素的第一个节点
+
+firstElementChild得到父元素的第一个元素节点 ie不支持
+
+nextSibiling下一个兄弟节点
+
+document.documentElement 获取根节点
+
+元素节点的nodeType是1
+文本节点的nodeType是3
+
+在dom中遍历判断节点类型
+
+dtd文件
+
+dom属性 attr 自有属性可以通过.的方式修改 没有的使用getAttribute修改
+对象.aa 对象属性 prop、
+
+
+
+
+事件
+
+onload() 
+
+        

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>对象冒充</title>
+</head>
+<body>
+	<script type="text/javascript">
+
+	// 对象冒充实现继承
+		// function ClassA(sColor) {
+		// 	this.color = sColor;
+		// 	this.sayColor = function(){
+		// 		alert(this.color);
+		// 	};
+
+		// }
+
+		// function ClassB(sColor){
+		// 	// this.newMethod = ClassA;
+		// 	// this.newMethod(sColor);
+		// 	// delete this.newMethod; //外部不能访问 在内部就删除掉
+		
+		// 	ClassA.call(this,sColor);//最简洁的对象冒充写法    
+		// }
+		// var o = new ClassB('red');
+		// 		o.sayColor();
+
+	// 原型链实现继承 es6已经支持类
+	var ClassA = function(sColor){
+		this.color = sColor;
+	}
+	ClassA.prototype.sayColor = function(){
+		alert(this.color);
+	};
+	function ClassB(sColor){
+		ClassA.call(this,sColor);
+	}
+	ClassB.prototype = new ClassA();
+	ClassB.prototype.constructor = ClassB;
+	var o= new ClassB('red');
+
+	o.sayColor();
+
+
+
+
+
+
+
+
+		
+	</script>
+</body>
+</html>

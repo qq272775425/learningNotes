@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style type="text/css">
+		body{
+			background-color: #000000;
+
+		}
+		#clock{
+			background-color: #fff;
+		}
+	</style>
+</head>
+<body>
+	<canvas id="clock" width="400" height="400"></canvas>
+	<script type="text/javascript">
+		var cvs = document.getElementById('clock');
+		var ctx = cvs.getContext('2d');
+		ctx.beginPath();
+		ctx.arc(200, 200, 150, 0, 2*Math.PI, false);
+		ctx.lineWidth = 3;
+		ctx.stroke();
+
+		
+	</script>
+</body>
+</html>

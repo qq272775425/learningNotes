@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<script>
+	new Tab();
+	function Tab(){
+		this.init.apply(this,arguments);
+	}
+	
+	Tab.prototype = {
+		/*
+			初始化方法
+			获取html元素（视图）,并绑定事件
+		*/
+		init:function(){
+			this.tab = document.getElementById('tab');
+			this.tabs = tab.getElementsByTagName('li');
+			this.contents = document.getElementById('content').getElementsByTagName('ul');
+			
+			for(var i=0;i<this.tabs.length;i++){
+				this.tabs[i].index = i;
+			}
+			
+			this.addListener(this.tab,'click',this.bind(this,this.showTab));
+		},
+		/*
+			改变函数func的执行上下文
+		*/
+		bind:function(obj,func){
+			return function(e){
+				func.apply(obj,arguments);
+			}
+		},
+		/*
+			通用事件监听方法兼容w3c和IE
+		*/
+		addListener:function(ele,envtype,handler,isBubble){
+			if(ele.addEventListener){
+				ele.addEventListener(envtype,handler,isBubble);
+			}else if(ele.attachEvent){
+				ele.attachEvent("on" + envtype,handler);
+			}else{
+				ele["on" + enctype] = handler;
+			}
+		},
+		/*
+			选项卡的业务逻辑
+		*/
+		showTab:function(e){
+			var event = e || window.event;
+			var targetObj = event.target || event.srcElement;
+			if(targetObj.nodeName == 'LI'){
+				for(var i=0;i<this.tabs.length;i++){
+				this.tabs[i].className = "";
+			  }
+				targetObj.className = 'current';
+				for(var i=0;i<this.contents.length;i++){
+					this.contents[i].style.display = 'none';
+				}
+				this.contents[targetObj.index].style.display = 'block';
+			}
+		}
+	}
+	
+	
+</script>
+</body>
+</html>

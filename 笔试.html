@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+    <style>
+        body {
+            background: #000;
+        }
+        .page{
+            margin: 100px auto;
+            width: 100px;
+            height: 50px;
+            /*background: -webkit-linear-gradient(-135deg,transparent 13%,#ccc 0);*//*右上缺角*/
+            /*background: -webkit-linear-gradient(45deg,transparent 13%,#ccc 0);/*左下缺角*/
+            /*background: -webkit-linear-gradient(-45deg,transparent 13%,#ccc 0);*//*左上缺角*/
+            /*background: -webkit-linear-gradient(135deg,transparent 13%,#ccc 0);*//*右下缺角*/
+            position: relative;
+            /*border-radius: 5px;*/
+        }
+        .page:after {
+            content: "";
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            background: -webkit-linear-gradient(top right,transparent 50% ,#fff 0);
+            top: 0;
+            right: 0;
+            /*border-bottom-left-radius:5px;*/
+
+        }
+    </style>
+</head>
+<body>
+    <div class="page"></div>
+</body>
+</html>

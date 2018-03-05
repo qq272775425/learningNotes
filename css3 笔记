@@ -1,0 +1,137 @@
+caniuse.com 网站测试css3兼容性
+
+css3兼容性写法 -wenkit-
+-moz- -ms- -o- xxx
+
+css参考手册 css.doyoe.com 
+选择器  
+
+英文不换行问题： world-break: break-all;
+为对象选择器 
+伪类选择器 已存在对象加样式
+：after{} 插入行元素 
+::selection{}选取文字的颜色
+
+text-shadow: none 一个或多个语法
+*零活多个
+？零个或一个
++一个或多个
+
+text-shadow:1px 1px 1px rgba(255,255,255,0);
+
+文字末尾自动加省略号。。。
+{overflow:hidden;
+white-space:nowaro;
+text-overflow:ellipsis;}
+
+网络字体
+@font-face{
+	
+}
+
+边框
+边框圆角 border-radius:10px 20px 30px 40px; 顺时针方向
+边框阴影 box-shadow
+边框图片
+
+背景
+背景原点 background-origin :cover/contain/解决边框盖住背景图片的问题
+
+
+
+弹性和模型
+css有一种基础设计模式叫盒模型 盒模型定义了web页面中的元素如何来解析
+css中每一个元素都是一个盒模型 包括html body 在和模型中主要包括 width heigh border background padding margin这些属性 
+在css中盒模型被分为两种 第一种是w3c的标准模型 另一种是ie传统模型，相同之处是都是对元素计算尺寸的模型，不同之处是两者计算方式不一致，原来意义上说的盒模型是分的很细的，这里所看到的是外盒模型和内核模型
+w3c标准盒模型
+	外盒模型尺寸计算（元素空间尺寸）
+		element空间高度 = 内容高度 +内边距+边框+外边距
+		element空间宽度 = 内容宽度 +内边距+边框+外边距
+	内盒模型尺寸计算 （元素大小）可视宽度大小
+		element高度 = 内容高度 + 内边距 +边框（height为内容高度）
+		element宽度 = 内容宽度 + 内边距 +边框（width为内容高度）
+
+ie传统下盒模型ie5及ie5以下以及怪异模式下
+	外盒模型尺寸计算（元素大小）
+		element空间高度 = 内容高度+外边距 （heignt包括元素内容宽度 边框 内边距）
+		element空间宽度 = 内容宽度+外边距 （width包括元素内容宽度 边框 内边距）
+	内盒尺寸计算（元素大小）可视大小
+		element高度 = 内容高度（height包含元素内容宽度 边框 内边距 会比w3c相比缩小）
+		element宽度 = 内容宽度 （width包含可元素宽度 边框 内边距）
+
+
+弹性盒模型
+display: -webkite-box;
+
+-webkite-box-orient(方向):horizontal;(水平)
+-webkite-box-orient(方向):vertical;(垂直)
+
+-webkite-box-direction：normal; 正序排列
+-webkite-box-direction：reverse; 逆序排列
+
+-wenkite-box-flex:;弹性盒是动态分配父元素的剩余空间而不是分配父元素的所有空间，
+#box li:nth-child(1){-wenkite-box-flex:1;}
+#box li:nth-child(2){-wenkite-box-flex:1;}
+#box li:nth-child(3){-wenkite-box-flex:2;}//三个li按照1:1:2的比例分配box的剩余空间
+
+子元素在父元素居中 box-pack :center;
+
+-webkit-box-reflect :above 0;  above  below  left  right 只有webkit支持
+
+-webkit-box-sizing:content-box;让w3c的盒模型和ie下一样 width = content+padding+border
+-webkit-box-sizing:border-box;呈现w3c盒模型
+
+怪异模式 ie5 及以前的版本的盒模型和w3c差别很大，为了可以浏览老版本的页面 让ie6向下兼容，设计的怪异模式  通过文档类型不加或css中特殊的语法可以打开怪异模式。
+
+过渡 2d/3d动画变换 浏览器原生的性能更好 、
+
+transform 旋转rotate 扭曲skew 缩放scale 位移translate
+
+过渡 trasition :属性 执行时间 形式 延迟;
+css所有有范围的属性都可以做动画 带单位 带范围
+
+transition-property 指定过渡动态模拟的css属性
+transition-duration 完成动画所需时间
+transition-timing-function 指定过渡函数
+transition-delay 动画延迟
+
+animation动画 
+
+按关键帧做动画 可以完成复杂动画
+@keyframes 关键帧
+div:hover{
+	-webkit-animation: wobble 5s ease .1s forwards;//保持最后状态用forwards 
+}
+@keyframes wobble{
+	0%{
+		margin-left: 100px;
+		background: green;
+	}
+	40%{
+		margin-left: 150px;
+		background: orange;
+	}
+	60%{
+		margin-left: 75px;
+		background: blue;
+	}
+	100%{
+		margin-left: 100px;
+		background: red;
+	}
+}//from to 
+
+
+3d方向动画 
+
+z轴 垂直于屏幕
+
+perspective属性 视角 加在父元素身上 如果加在父元素上是第三视角 给子元素加上是第一视角 
+
+视角原点
+旋转 xyz方向转
+
+多层3d变换 需要给父元素加上transform-style：preserve3d； 保持3d
+-webkit-perspective:800px;//加到父元素
+
+-webkit-transform: routateX(30deg);

@@ -1,0 +1,45 @@
+流行类库：library
+	zepto.js 
+	sea.js 
+	jquery.js 
+	jqueryUI.js 
+	在git上有代码
+
+框架： framework
+	dojo.js 
+框架带界面 更大提高生产力  界面风格统一
+
+
+把封装好的函数放在一起
+
+事件！！！！！
+
+
+绑定多个事件不会被覆盖
+addEventListener('click',function(){},flase) 事件监听 三个参数：事件类型 事件处理函数 事件冒泡（flase true） ie会报错
+
+attachEvent ('onclick',function(){
+	alert('haha');
+})
+
+封装事件绑定函数：
+function addEvent(elem,type,handler){
+	if(elem.addEvementListener){
+	elem.addEvementListener(tpye,handler,false);
+}else if(elem.attachEvent){
+elem[type+handler]= function(){
+handler.call(elem);
+};
+	elem.attachEvent('on'+type,elem.fn);
+
+
+}else{
+	elem['on'+type] = handler;
+}
+}
+
+
+attachEvent 存在问题：this指针丢失 指向window
+事件触发顺序不对
+
+call 和aplay的区别

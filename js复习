@@ -1,0 +1,340 @@
+ecma制定js规范 欧洲电脑制造商协会
+主要是客户端 也可以运行在服务器端
+js ：核心
+		语法
+		数据类型
+		语句
+		关键字
+		保留字
+		对象
+		操作符
+	 dom
+	 bom 
+js没有第四版常用第3版 第5版 第六版
+	
+dom
+把关心的标签都看作对象用js控制网页内容
+级别：0123
+
+bom用js控制浏览器
+
+异步加载js
+
+阻塞性的事件如alert 会影响后面的加载
+在script中加入async  <script src = "#" asyync = async> 可以异步加载js为文件 不会阻塞后面代码执行  ie中用defer
+
+src属性：可以访问自己网站之外网站的文件，实现跨域
+
+type="text/javascript" 
+type="text/template" 模板语言
+
+docuemnt.documentElement.clientWidth//得到浏览器宽度
+
+混杂模式 标准模式
+
+基本语法
+标识符 指变量函数属性的名字 或者函数的参数 标识符的命名：第一个字母必须是字母 下划线 美元符号
+其他字符可以是字母下划线美元符号数字 驼峰式 匈牙利命名方式 
+
+严格模式
+ecma5引入的方法 严格模式下 ecma3中的兼容性问题会得到处理，不不安全的会报错，通过在顶部添加"use strict"开启 也可以在函数大括号中最上方添加
+
+保留字关键字 
+现在已经用到或者未来将会用到的单词
+
+变量
+声明使用 var  
+声明变量不加var 会生成全局变量 不容易维护
+
+数据类型
+两种 基本
+		undefind
+		boolean
+		string
+		mull
+		number
+	 引用
+	 	object
+使用typeof测试变量类型typeof a；或type（a）；都可以可以当做函数和运算符
+结果返回一个字符串
+null==undefind 返回true
+
+单精度浮点计算值不稳定 底层采用模拟计算
+
+NaN isNaN()
+
+数值转换  Number()
+boolean true返回1 false返回0
+null返回0
+undefined 返回NaN
+字符串只包含数字返回十进制
+浮点型返回小数浮点
+十六进制返回十六进制
+空字符串返回0
+其他字符返回NaN
+
+object 类型
+var o = new Object;
+变量放在栈 对象放在堆
+变量的值是对象在堆中的地址
+
+构造类：
+function Object（）{。。。}首字母大写
+
+返回构造函数constructor 
+
+返回是否是自有属性
+var o =new Object();
+o.name = 'lisi';
+o.hasOwnProperty('name');//返回ture
+
+三步运算符
+1==1？'yes':'no';
+
+逻辑与短路运算：&&前面返回false后面的不在运算	逻辑或前面为真后面以为真
+
+== 相等
+===全等 数据类型也相同
+
+条件循环选择语句
+
+函数内部不加return 系统自动加return：false；
+
+获得函数的实参 arguments[0] 伪数组 没有数组中那些方法
+function aa(){}
+
+js没有重载的概念 传参没有个数限制
+
+动态属性
+随用随添加不用每次都声明
+
+基本数据类型值传递
+var a=5;
+var b=a;
+b=6;
+alert(a); //5
+基本数据类型值传递会在内存空间开辟一个新的内存空间
+
+引用类型传递，传递对象的地址，指向堆中的对象 改变一个都跟着改 根本上来讲引用类型传递和基本类型传递都属于值传递 只不过引用类型传递的值是对象在堆内存中的地址，是一个16进制的值
+
+事例检测
+o instanceof Object //返回true 
+
+object是所有的事例的祖宗
+
+检测数据类型
+o.constructor == Object
+
+监测数据类型的方法
+	·typeof 运算符
+	·constructor 属性
+	·instanceof 运算符
+
+执行环境和作用域 ！！！！！！！ 逢考必问
+函数中 var声明的是局部变量
+作用域链 从自己函数到函数调用者一直找到全局查找变量
+没有块级作用域  if for循环中的 i j在外面也可以访问到
+
+垃圾回收
+手动将用完的对象社为null
+element.someOnject = null;
+
+
+瀑布流的内存堆积怎么释放
+
+引用类型
+先有类后有对象 
+万物皆对象
+研究对象的属性方法
+对象直接低量 数组直接量
+
+Array类型
+var clours = new  Array（）；
+var clours = new  Array（20）；数组长度为20
+var clours = new  Array（"red","green","blue"）；
+数组的.length 是可读可写的 实现删除数组最后一个或几个元素
+colours[colours.length] = "black";//相当于push
+isArray（。。。）es5中方法 判断是不是数组
+
+isArray 函数封装
+	function isArray(val){
+		if(isArray){
+			return Array.isArray(val);
+		}else{
+			return val.constructor == Array;
+		}
+
+	}
+
+alert 一个数组会把数组中的元素都弹出  相当于alert（arr.toString）
+alert 一个有内容的对象会返回一个Object
+
+forEach es5新方法 
+arr.forEach(function(v,i){
+	console.log(i + '-' + v);
+});
+map 映射 es5新方法 将原数组根据fn进行重新计算返回一个新数组
+实现原理 ：
+	创建一个新数组
+	循环给定数组
+	利用push方法将通过fn传参计算好的结果压入新声明的数组
+	返回这个新数组
+every 方法
+reduce()	
+
+函数声明 函数表达式 的区别
+	函数声明会在打开页面优先加载
+	函数表达式只有在执行到该语句才会生效
+
+arguments.calllee() 函数别名 代表函数自己
+
+this最容易出现问题的东西 
+在一个对象的方法中 this指向他自己
+普通函数中this指向eg:window function aa()
+attachElement()方法this指针丢失 指向window
+
+函数的属性和方法
+每个函数都包含length prototype
+函数名.length 可返回形参个数
+arguments.length 返回实参个数
+
+apply call  极其重要!!!!!!!!!!逢考必问!!!!!!!!!!!!
+function aa(){
+	alert(this);
+}
+aa.call({name:'lisi'},'lisi',34);
+call函数的第一个参数会把函数的this指针改掉，使this指向对象 call有多个参数 第一个参数改变this指针 后面的参数对应函数形参
+apply({name:'lisi'},['lisi',34]) apply只有两个参数 第一个参数改变 函数this指针 第二个参数是一个数组
+二者都可以调用函数,用途广泛
+
+包装类型:String Boolean Number 会自动把基本数据类型打包成一个对象
+
+全局对象
+
+面向对象的程序设计:oo
+ooa面向对象分析
+ood面相对象设计
+oop面向对象编程
+
+一个属性就是一个值 属性下还有属性 对象粒度 属性可读 可写 可配置 可枚举
+
+var o = new Object();
+o.name = 'lisi';
+o._sex = '男'; //对象属性前加下划线类似私有属性 约定不能修改
+Object.defineProperty(o,"sex",{
+	writable: false,
+	value: "男"
+});//不可修改
+
+设计模式 23种
+工厂模式
+	简化创建对象的过程，创建多个相似对象的模式，本质就是函数封装。但是没有解决对象识别的问题
+构造函数模式
+	缺点：每个方法都要在构造函数上实例化一遍 浪费内存
+原型模式 !!!!!!!!必考
+	方法拿到外面声明 
+	Person.prototype.sayName = function(){
+	alert(this.name);
+	};
+
+	prototype  
+属性不要放在原型 应该放在构造函数中 方法放在原型中
+
+每创建一个实例对象都有与之相关联的原型对象，但是没有访问他原型对象的方法
+ecma5 中有Object.getPrototypeOf（）可以获取原型
+
+每一个js对象都有另外一个对象关联 另一个对象对象就是我们熟知的原型 每一个对象都从原型继承属性（null Object.prototype没有原型 ） 
+
+
+所有听过对象直接量创建的对象都具有同一个原型对象 并可通过js到吗Object.prototype获得原型是对象的引用 通过关键字new和构造函数调用创建的对象的原型就是构造函数prototype属性的值 因此 同使用{}创建的对象一样，通过new.object()创建的对象业绩承来自Object,prototype 同样通过new Array（）创建的对象的原型就是Array.prototype newDate创建的对象的原型就是Date.prototype.
+没有原型的对象为数不多，Object.prototype就是其中之一 他不继承任何属性，其他原型对象都是普通对象 普通对象都具有原型 所有内置构造函数以及大部分自定义的构造函数都具有一个继承自Object.prototype的原型
+例如 date.prototype的属性继承自Object.prototype 因此由new Date()创建的date对象的属性同时继承自Date.prototype和Object.prototype这一系列链接的原型对象就是所谓的原型链
+
+javascript继承 es6 继承机制
+对象冒充 
+<script type="text/javascript">
+		function ClassA(sColor) {
+			this.color = sColor;
+			this.sayColor = function(){
+				alert(this.color);
+			};
+
+		}
+
+		function ClassB(sColor){
+			this.newMethod = ClassA;
+			this.newMethod(sColor);
+			delete this.newMethod; //外部不能访问 在内部就删除掉
+		}
+		var o = new ClassB('red');
+		o.sayColor();
+</script>
+原型链
+var ClassA = function(sColor){
+		this.color = sColor;
+	}
+	ClassA.prototype.sayColor = function(){
+		alert(this.color);
+	};
+	function ClassB(sColor){
+		ClassA.call(this,sColor);
+	}
+	ClassB.prototype = new ClassA();
+	ClassB.prototype.constructor = ClassB;
+	var o= new ClassB('red');
+
+	o.sayColor();
+
+闭包 
+外部函数内部声明内部函数，内部函数引用外部函数中的局部变量，这样外部函数执行完成以后，外部函数中的局部变量不会被释放
+
+函数立即调用:
+(function(){})()
+
+什么是对象 ：万物皆对象
+什么是类： 具有相同的属性和方法的对象的集合
+类的作用：相同属性方法重复利用 进行封装成构造函数 
+		  属性放在构造函数 方法函数放在原型中
+函数的作用：相同多次重复调用的代码，封装成函数
+继承：对象冒充 原型链
+
+函数表达式
+递归 自己调用自己 callee
+闭包：外部函数内部声明内部函数，内部函数引用外部函数中的局部变量在外部函数执行完成后，局部变量不会被释放 在return方法被占用的时候使用且有多个局部变量想在外部实现调用
+缺点会造成内存泄漏
+闭包的另一特点：内部函数和外部函数执行时间不同
+闭包的典型例子：setTimeout()
+				点击一个li弹出他的索引
+
+内存泄漏
+闭包
+对象设为null 垃圾回收
+
+私有变量 
+用var声明的变量叫私有变量 var sex = 'male';
+var sayHello = function(){}//私有方法
+this.sayHello = function(){}//特权方法
+Person.prototype.sayHello = function(){}//公有方法
+特权方法和公有方法同时出现，特权方法会把公有方法屏蔽掉
+
+BOM DOM
+客户端检测
+能力检测 if(document.getElementByClassName)
+浏览器检测navigator.userAgent
+
+DOM操作
+动态加载js 通过js创建js 非常有用！！！性能优化 按需加载 异步加载
+动态加载js的函数
+function loadScript(url){
+	var script = document.creatElement("script");
+	script.src = url;
+	document.body.appendChild(script);
+}
+loadScript("xxx.js");
+
+
+
+
+
+
+

@@ -1,0 +1,88 @@
+html 
+遵循xhtml 1.0规则 
+所有的标签必须结束
+所有标签必须小写
+属性必须使用从成对引号
+所有标签必须有值
+所有特殊符号必须转意
+文档类型<!DOCTYPE html>
+编码为utf-8
+link应放在head
+js放在body末尾
+
+命名规范
+id：hello-world
+class： hello-world
+name： helloWorld 驼峰式
+header main nav content 
+
+合理使用标签，尽量语义化
+
+合理嵌套，减少嵌套div
+行级元素span strong em p h1 h6 不能嵌套块级元素div ul ol dl p 
+严禁多div span table 使用正确的标签展示dom结构在没有css情况下，仍然具有结构可读性
+img 需要带上alt 属性 当图像不能展现出来的时候有替换文字
+h1 只能出现一次
+
+书写链接地址时必须注意重定向，必须在url地址后面加/
+
+合理化表单结构
+使用fieldset 元素包裹箱头类别的字段
+使用 legend元素表示字段类别名称、
+使用label表示字段文本，添加必要的for属性，以在点击字段文本时，文本框能获得焦点
+文本框不使用size定义款宽度，而使用css的width属性
+添加maxlength属性限制输入字符的长度
+
+
+
+
+
+
+css 部分
+ 
+css命名规则
+样式类名全部用小写，首字符必须是字母，禁止数字或其他特殊字符，由以字母开头的小写字母数字下划线组成
+可以是单个单词，也可以是组合词，使其语义化、
+尽量使用单个单词
+共用和页面级css文件 页面级css文件名称和html相同
+
+命名空间
+
+引用外部样式表
+尽量避免使用内联
+严禁在文档中使用内部样式
+压缩代码，在线代码压缩工具csscompressor.com
+使用合并方式使用bgc margin padding。。。。。。
+字体统一
+
+编写兼容css代码
+页面必须在ie6-8 firefox opera safari chrome 下显示兼容
+尽量不使用ie浏览器检测，针对某一版本浏览器编写额外的样式表
+!--[if IE 6]>
+//<![endif]>
+尽量不使用！important或下划线等招数编写代码
+
+图片部分
+命名规范
+运用css精灵技术集中小背景，小图标，减少http请求，务必在spritepsd原图中
+通过背景图片定位 一般是-x -y量好位置 
+画参考线，并保存至images目录下
+图片格式仅限于gifimgpng
+保证视觉效果情况下尽量选择小格式图片
+
+
+
+
+js 部分
+
+js命名规范
+js文件命名：英文名,后缀.js,公用common.js 其他依据实际需求命名
+文档中引用js 
+使用外部文件方式引用js
+将引用js 代码集中放置在一起放置在</head>之前或</body>之前，严禁放在body分散放置
+是dom结构与js代码分离
+最小化压缩js文件使用压缩工具 
+
+
+
+

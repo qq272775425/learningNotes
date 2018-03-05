@@ -1,0 +1,77 @@
+ www.css88.com
+  jquery
+  选择器
+  属性/css
+  dom遍历
+  操纵
+  事件
+  ajax
+  解释型语言 逐行运行
+  编译型语言 整体编译
+
+  文档就绪函数
+  $(document).ready(function(){})
+  $(function(){})  
+  类似与
+  windiw.onload
+  区别：
+  $(function(){})  dom加载完毕
+  windiw.onload  资源文件加载完毕
+
+  $对象是jquery对象
+
+  jquery可以选中一个或多个元素
+
+
+
+
+jquery 没有原生性能好
+
+元素隐藏：
+	display none
+	type = "hidden"的表单
+	height = 0 width = 0
+	一个元素祖先元素是隐藏的这个元素不会显示
+	visibility:hidden
+	opacity: 0
+	不在文档中的元素不可见，即innerHTML插入之前
+
+	类同css选择器
+	$('teb').on('click',function(){
+
+})\
+
+缓存节点可以以提高jq性能     
+
+ jquery可见性选择器：
+
+jQuery操作：
+	.clone()
+	.warp()  
+
+
+
+
+	事件冒泡 是所有浏览器的默认行为，触发子元素的时候父元素的事件也会触发，99%会带来负面影响，却能添加后生成元素的事件绑定问题
+	e=e||window.event;
+	e.preventDefault();  阻止浏览器默认行为
+	e.returnValue();  阻止浏览器默认行为
+	阻止浏览器默认行为不会阻止冒泡，会组织a标签的页面跳转等
+	e.stopPropagation();  标准浏览器阻止冒泡
+	e.cancelBubble = true;  ie浏览器阻止冒泡
+	阻冒泡会阻止父元素事件的触发
+	jQuery操作：
+		on('click',function(){
+		return false;//即取消浏览器默认行为，又阻止冒泡。
+	})
+
+
+
+	.hide() 隐藏（display：none）
+
+	父元素隐藏，子元素一定隐藏 
+
+	extend函数
+
+	animate() 动画函数
+	

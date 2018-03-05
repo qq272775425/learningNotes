@@ -1,0 +1,27 @@
+bom 浏览器对象模型
+console.log(window)
+scrillTo(x,y)滚动条
+scrillBy(x,y)滚动条
+
+阻止浏览器默认行为"<a href="#" javascript:void(0);></a>"或<a href="#" javascript:;></a>或return flase;
+定时器：setIntercal(function(){
+	
+	},200)不手动清除会一直执行
+	clearIntercval();清除定时器
+	setTimeout 执行一次自动清除
+
+
+document.write会引起页面重绘
+
+获取滚动条位置有兼容性问题chrome下用document.body.scrillTop 
+在其他浏览器用document.documentElement.scrillTop
+
+var iScrillTop = document.documentElement.scrollTop || document.body.scrollTop;解决兼容性问题
+
+history
+
+location
+
+navigator对象
+	userAgent浏览器性能检测
+

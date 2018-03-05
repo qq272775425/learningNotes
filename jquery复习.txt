@@ -1,0 +1,62 @@
+warp()包裹
+clone()克隆
+append()追加dom节点 往父元素插
+appendTO()把子元素追加到父元素中
+HTML() 相当于innwehtml
+text() 箱单股 innerText 火狐不支持
+after()插下有一个兄弟
+before() 插前一个兄弟
+empty()清除子元素
+remove()移除自己
+
+
+遍历 
+chimlren()查找亲儿子
+find()查找后代
+next()紧邻的下一个兄弟
+nextAll()下一个所有兄弟
+prev 前一个
+sibiling 所有兄弟
+
+事件
+focusin 获取焦点支持事件冒泡
+focusout 取消焦点支持事件冒泡
+blur 取消焦点不支持事件冒泡
+focus 获取焦点不支持事件冒泡
+mouseenter 鼠标划入 父元素里有子元素 给父元素绑定滑动事件 从父元素滑动到子元素时事件不会被触发
+mouseleave 鼠标划出 父元素里有子元素 给父元素绑定滑动事件 从父元素滑动到子元素时事件不会被触发
+mouseover 鼠标划入 父元素里有子元素 给父元素绑定滑动事件 从父元素滑动到子元素时事件会被触发
+mouseout 鼠标划出 父元素里有子元素 给父元素绑定滑动事件 从父元素滑动到子元素时事件会被触发
+hover(fn,fn) mouseover mouseout 的简写，第一个代表划入 第二个代表划出
+change 文本框内容改变  用于用用户验证、
+
+事件冒泡 
+是浏览器默认行为 在子元素进行某种事件操作 由于事件会逐层往上传递，他的父元素也会感受到这个事件，一直冒泡到body 99%情况会带来不好的结果 1%情况会解决后生成元素的事件绑定问题。 如果同时给父元素和子元素注册事件，父元素的事件也会被触发 可以利用事件冒泡完成事件委托
+阻止事件冒泡 ie下使用 cancelBable 其他浏览器使用stopPropagation来阻止冒泡 
+实现代码：
+oB.onclick = function(e){
+	e = e || window.event;
+	alert(b);
+	e.stopProPagation();
+	e.cancelBable = true;
+};
+或者使用jquery在事件最后 return false；
+$('b').on('click',function(){
+	alert(b);
+	return false;//不返回对象 取消浏览器默认行为 取消冒泡 
+})
+将子元素 或 后生成的事件绑定委托给父元素
+
+事件委托 
+oUl.onclick = function(e){
+	e = e || window.event;
+	var targate = e.targate||e.srcElement;//获取事件源
+	if(targate.tagName == 'Li'){
+	alert(targate.innerHTML);
+}
+};
+事件代理函数delegate() 
+on()
+live()有严重性能问题
+tigger()模拟触发会带默认行为 
+tiggerhandler()模拟触发 不会带默认行为

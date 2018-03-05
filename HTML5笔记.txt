@@ -1,0 +1,66 @@
+简介
+语义化标签：
+表单控件表单属性
+视频音频标签无需使用flash
+新选择器接近jquery
+jason新方法
+自定义数据js加载延迟加载异步加载
+页面不刷新前进后退
+本地存贮 类似cookie信息量更大
+web存储在浏览器上类似sql数据库 本地
+webworker 类似多线程处理
+websocket 网页时事通信
+跨域文件通信
+文件拖放 文件上传使用拖拽而不是路径
+地理信息 搜集电脑地理位置 wifi密集度反应地理信息
+canvas 嗷嗷重要 绘图
+
+标签更加语义化
+ <nav></nav>
+<header></header>
+<article></article>
+<section>文章中的区段</section>
+<datalist></datalist>
+
+表单
+新增属性
+type e-mail time search autofocus 
+width height datalist pattern直接插入正则
+
+选择器 
+querySelector
+querySelectorAll
+fact(){}
+
+
+cookie 明文形式的.txt文件   理论上各个浏览器大小不一致 2-4k
+
+调用：document.cookie = 'name=lisi'
+
+
+ifarm 在页面中嵌入一个页面进行局部刷新
+
+ifarm 页面和主页面之间数据交互
+	
+
+
+
+面试：html5 新特性
+
+兼容性 老版本浏览器也可以运行，不靠谱
+实用性 简化标签标签 增加了移动互联网元素 语义化更明显 
+革命性 HTML不再是简单的标签元增加了api 渲染
+微数据微格式的支持
+本地存储 离线应用
+api调用 地图位置lbs等 
+	socket及时链接通讯 不同于ajax ajax开辟个新的通道，进行后台post不间断传输数据数据量比较大的时候会比较慢 xmlhttprequest方法 是在后台再开一个80端口的浏览器进行数据传输， 
+	html 5 是通过socket单独开辟一个通道而不是使用80端口，但存在安全问题 存在服务器端口禁用的问题
+后台模拟多线程
+多媒体支持 audio video 
+三维 图形特效
+css3 
+表单新增属性 
+
+
+
+h5标签 语义化 方便css查找dom元素 <nav><header><footer></footer></header></nav>  方便浏览器阅读解析代码 方便搜索引擎解析代码 抓取信息

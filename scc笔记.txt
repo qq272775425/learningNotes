@@ -1,0 +1,90 @@
+html 网页中显示什么内容
+css 样式
+js 交互
+css 层叠样式表 解决内容与表现分离的问题
+多个样式可以叠加
+选择器，属性 属性的值
+低级问题 全角半角符号使用错误
+颜色表示 #fff rgb（255,255,255） red
+选择器 
+	标签选择器 元素选择器h1
+	分组选择器 h1,h2,h3,h4,p
+	派生选择器 li strong{}
+	自带选择器h1>strong ie6兼容性问题
+	id选择器 最快#btn 
+	类选择器 .aa 
+	多类选择器.aa .bb 
+    多类选择器和类选择器用于组建开发
+	相同属性后面会的把前面的覆盖 
+	属性选择器 
+	div[class="text"]{}属性值为
+	div[class$="text"]{}属性值以text结束
+	div[class~="text"]{}
+	div[class*="text"]{}属性值包含text就可以
+	div[class^="text"]{}属性值以text开始
+	div[class|="text"]{}
+	div标签中包含class属性
+	伪类选择器a：hover {bgc：red；}
+	
+
+
+面试：选择器权重值问题
+	id权重值为100
+	class为10
+	标签选择器为1
+	权重值可以叠加
+	#ee h1 的权重为101
+	
+面试：浏览器渲染过程，解析页面
+	打开html根据doctype检查语法错误
+	validator.w3.org用于检查语法错误 
+
+内部大于外部大于外联
+
+transparent 透明
+
+背景图片 background-image repeat repeat-y -x
+
+background-position center top  
+
+边框 颜色
+
+css 背景
+html body 默认高度为0
+
+背景图片水平垂直居中：background-position:50% 50%;
+
+text-decoration:none;去掉下划线
+ text-indent 缩进
+ text-align： center；水平居中
+ 
+
+ line-height：40px；
+ height：40px； 垂直居中
+
+ 定位 position
+ static 
+ relative 相对于自己的原原始位置 不释放空间
+ absolute 相对于已定位的祖先元素 释放空间
+ fixed 相对于浏览器
+
+浮动
+ float： none left right；空间释放 块变行
+ 清除浮动 clear：left right；
+
+ 盒模型 
+ 外边距 margin：20px 30px 40px 50px;上右下左顺序顺时针
+ 边框 border
+ 内边距 padding
+ 内容 
+ 设置weith heigh是设置内容的宽高
+
+ display：inline-block；ie6不兼容 代码换行当成空格在元素之间产生间隙
+
+行不能设置宽高、
+块可以
+
+转换： 浮动 block inline-block
+
+
+

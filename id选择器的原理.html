@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<button id="btn">click</button>
+	<script type="text/javascript">
+		function $(selecter){
+			return document.getElementById(selecter.substring(1));
+			// 街字符串substr(从哪开始截，截几位) substring(从哪开始截，截到第几位)
+		}
+		$('#btn').onclick = function(){
+			alert(11111);
+		};
+	</script>
+</body>
+</html>

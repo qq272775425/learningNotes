@@ -1,0 +1,66 @@
+RWD 响应式设计
+
+viewport 可视窗口
+尺寸 缩放级别 缩放倍数
+移动设备会设置一个默认的viewport尺寸和缩放级别 
+
+获取浏览器可视窗口宽度 offsetwidth（） 
+
+<meta name="viewport" content="initial-scale=1.0"> //设置可视窗口宽度
+<meta name="viewport" content="width=device-width,initial-scale=1.0,user-scalable=no,maximum-scale=1.0,minimum-scale=1.0"/>//移动端开发基本配置
+
+css像素 
+dpi像素		缩放比公式可以算
+
+链接样式表添加media属性（媒体查询）
+
+<link rel="stylesheet" media="(max-width:480px)"href="mobile.css">media="(max-width:480px)"href="mobile.css" 当viewport大小小于等于480px的时候加载mobile.css
+媒体类型包括：
+screen 
+tv
+projection
+print
+
+<link rel="stylesheet" media="print" href="print.css"> 调用打印样式
+
+媒体样式：水平方向垂直方向
+@media(orientation:protoait;){...}媒体样式为垂直的时候的样式
+@media(orientation:landscape;){...}媒体样式为水平的时候的样式
+@media(max-divice-width:480px;){...}设备宽度为480px时候的样式
+	max-divice-width 设备宽度
+	max-width        可视窗口宽度
+@media(aspect-ratio:3/2){...}可视窗口宽高比 游戏开发中经常被使用
+@media(device-aspect-ratio:3/2){...}设备宽高比2/3时触发不会受到屏幕方向的影响
+@media(height:480px;){...}可视窗口的高度为480像素
+@media(max-height:480px;){...}可视窗口的高度小于等于480像素
+@media(min-height:480px;){...}可视窗口的高度大于等于480像素
+
+
+
+@media screen and (max-resolution: 150dpi ){...}
+@media screen and (resolution: 1dppx ),screen and ( -webkit-device-pixel-ratio: 1 ){...}
+
+
+操作符 
+and 
+@media screen and (min-width：480px ){...}屏幕设备并且可视窗口宽度的大小大于等于480px 触发
+@media screen and (min-width：480px ) and (max-wdith： 767px){...}
+
+not 
+@media not screen{...}
+
+响应式设计
+
+设置breakpoint
+
+下面的样式会把上面的样式覆盖还应避免交集
+
+流式布局
+宽度高度用百分比  
+
+
+
+高度使用heighenhth3222211122333
+
+
+

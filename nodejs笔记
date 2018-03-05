@@ -1,0 +1,233 @@
+
+
+前置知识
+面向对象
+函数式编程 函数声明 
+回调函数 绝大多数在异步方式下用到回调函数 上面的不执行完后面的不执行 效率低 js的单线程机制
+
+
+
+多线程 的解决方案  单线程异步非阻塞式 基于异步回调的方式
+前后端同一个技术 都是js 方便前后端过渡
+
+
+node.js +express 相当于 php+ci 相当于 java+ssh
+ 
+node.js是一个平台
+模块化开发
+CommonJS 让js实现浏览器以外的事是一套标准规范 其他的公司按照这个标准实现这些功能 命令行 图形界面 服务器端
+cmd common Module Develop/Defination 通用模块开发 
+
+速度更快 
+
+npm node包管理器 有很多的第三方包 其中tj大神的代码上传最多达到3% 
+
+dependencies 依赖 组件的名称,组件的版本号 
+
+util //工具箱
+
+
+环境变量·作用  让命令在任何地方都可以使用
+
+下载node 安装 配置环境变量 安装webstorm 新建express项目 node版本选择14.9 模板选择ejs css引擎plaincss 创建项目 在terminal 输入 npm start启动项目 
+使用插件：在package.jason文件中 输入
+"mysql":"*" 就会调用mysql插件 最下载最新的插件 
+已经下载的包会放在node_modules文件夹下
+通过命令 npm install 会自动下载 你在在package.jason文件中 输入的包
+
+PHP ci 流程 
+php环境 在服务器端启动服务器 启动阿帕奇服务 在xmpp下有htdocs目录文件 在浏览器端输入localhost:80 可以浏览 项目
+在地址栏中输入localhost/项目名 /控制器名 /方法名 /发送get请求  服务器端接受的请求 这时服务器端就会进行响应
+
+express 中的session 功能在3点几版本中session中间件都是自动安装的 在4点几的版本中需要自行安装 express中的各种中间间引入很痛苦 文档不全 
+
+node下
+会启动node.js自带服务器,以模块形式存在  
+
+router会调动系统
+
+package.json 项目配置文件 配置项目名 版本号 启动命令 依赖第三方插件 
+app.js 项目主入口文件 所有的操作通过他转发
+www 项目启动文件 配置端口号
+controllers 控制器
+models  模型 控制数据库
+route 地址转发,转发到控制器
+
+
+
+项目启动流程
+npm start 启动项目
+页面呈现流程 地址栏回车发送get请求
+进入app.js文件 通过app.use('/',routes),处理转到routes文件
+routes文件保存许多route命令 进行转发
+转发到welcome
+welcomne控制器完成页面渲染
+
+t_user用户表
+t_product 商品表
+t_product_img商品图片
+t_product_size商品大小
+t_order_item 订单明细 一对多
+t_order 订单
+
+主键 代理主键 自动增长的
+	业务主键 具有实际意义的
+
+	node最恶心的数无时无刻的在回调
+
+渐进式增强 随着浏览器的增强实现样式内容的增强
+
+组件化开发需要考虑组件没有正常加载的情况下页面是否可以正常显示正常实现功能.
+
+组件开发传值采用传对象的方式
+默认值和传的值通过$.extend进行合并 具体做法手册
+
+req.query 可以获得get传参
+
+一个商品 两个价格 三个size 可以查出6条记录  笛卡尔积形式
+
+
+                callback(rs);
+                rs[0].productSize = rs2;
+            db.query('select * from t_product_size where prod_id=?',[productId],function(rs2){
+            rs[0].productImg = rs1;
+        db.query('select * from t_product_img where prod_id=?',[productId],function(rs1){
+        });
+        });
+      callback(null, data);
+      callback(null, data2);
+      if (err) callback(err);
+      if (err) callback(err);
+    // 在这里处理data和data2的数据
+    // 这里处理文件数据
+    db.query('select * from t_product where prod_id=?',[productId], function(rs){
+    fs.readFile('/etc/passwd', function (err, data) {
+    fs.readFile('/etc/passwd2', function (err, data2) {
+    if (err) throw err;
+    parseFile();  // 处理完毕后，通过递归调用处理下一个文件
+    return;
+    });
+    });
+    });
+  , co = require('co')
+  , fs = require('fs');
+  , thunkify = require('thunkify');
+  // 在这里处理data和data2的数据,每个文件的内容从results中获取
+  // 在这里处理异常
+  console.log(data);
+  console.log(test);
+  fs.readFile('/etc/passwd2', function (err, data2) {
+  fs.readFile(file, function (err, data) {
+  function(callback){
+  function(callback){
+  if (err) throw err;
+  if (err) throw err;
+  if (files.length == 0) {
+  var file = files.shift();
+  var test = test1.toString() + test2.toString();
+  var test1 = yield readFile('test1.txt');
+  var test1 = yield readFile('test1.txt');
+  var test2 = yield readFile('test2.txt');
+  }
+  }
+  });
+  });
+  },
+('xxx');
+// 开始处理
+// 要处理的文件列表
+],
+amd cm对比
+async.parallel([
+co(function *() {
+exports.getById = function(productId,callback){
+exports.xxx = function(){};//暴露
+fs.readFile('/etc/passwd', function (err, data) {
+fs.readFile('/etc/passwd', function (err, data) {
+function parseFile () {
+function(err, results){
+module.exports = xxx;整个暴露
+nodejs 是一个平台 可以做集成测试 命令行 文件打包 web开发 单线程 异步 非阻塞的形式使他的效率比较高  但是复杂的多层回调嵌套会导致结构混乱,最简单有效的解决数据交互的回调嵌套就是使用json类型的数据库例如mongodb之类的
+Nodejs最大的亮点就在于事件驱动， 非阻塞I/O 模型，这使得Nodejs具有很强的并发处理能力，非常适合编写网络应用。在Nodejs中大部分的I/O操作几乎都是异步的，也就是我们处理I/O的操作结果基本上都需要在回调函数中处理，比如下面的这个读取文件内容的函数：
+nodejs领域中进行Web开发，最火的框架莫过于express了，值得一提的是express的核心成员TJ大神又领导了一个新的Web框架——koa，宣称是下一代的Web开发框架，koa真是借助了ES6的generator这一特性，让我们在开发Web系统的时候避免陷入层层的回调用。
+node处理复杂的查询 多表组合查询的时候 需要异步回调 层层嵌套callback
+parseFile();
+return xxx;
+see.js require.js
+try {
+var async = require('async')
+var files = ['file1', 'file2', 'file3'];
+var fs = require('fs')
+var fs = require('fs');
+var readFile = thunkify(fs.readFile);
+}
+}
+} catch (e) {
+})
+})();
+});
+});
+});
+};
+为了更好的处理嵌套回调的问题，可以考虑采用一些第三方专门处理异步的库，当然有能力的完全可以自己写个异步处理的辅助工具。
+代码可能性变差
+以上代码已依次处理数组中的文件为例，介绍了通过递归的方式控制代码的执行流程。
+优雅点：拥抱ES6，替代回调函数，解决回调地狱问题
+作用域链的英文叫什么 原型链的英文叫什么作用域链的英文叫什么 原型链的英文叫什么作用域链的英文叫什么 原型链的英文叫什么
+作用域链的英文叫什么 原型链的英文叫什么作用域链的英文叫什么 原型链的英文叫什么作用域链的英文叫什么 原型链的英文叫什么作用域链的英文叫什么 原型链的英文叫什么作用域链的英文叫什么 原型链的英文叫什么作用域链的英文叫什么 原型链的英文叫什么作用域链的英文叫什么 原型链的英文叫什么作用域链的英文叫什么 原型链的英文叫什么作用域链的英文叫什么 原型链的英文叫什么作用域链的英文叫什么 原型链的英文叫什么作用域链的英文叫什么 原型链的英文叫什么作用域链的英文叫什么 原型链的英文叫什么作用域链的英文叫什么 原型链的英文叫什么
+使用MongoDB 进行数据库架构 不使用传统表数据库
+例如
+公有方法 在原型下创建的
+出现异常后难以排查
+函数式编程 js中函数也是一个对象 以函数为研究对象 不受限制 \
+初级方案：通过递归处理异步回调
+前言
+华丽点：采用Async、Q、Promise等第三方库处理异步回调
+即callback函数内部嵌套下一条查询语句,导致结构混乱
+原型链 对象属性查找过程会一直查找到object
+同步方式 
+启动时，为了让nodejs支持ES6的特性，需要附加--harmony参数，如：node --harmony index.js
+回调:下面的代码依赖上面的代码的结果就需要回调 js是单线程阻塞式的,在加载图片ajax等长时间响应的时候就会有很长的等待时间为了解决这种问题引入了异步,但是异步的执行方式是多条代码同步执行的,如果下面的代码依赖于上面的代码的运算结果,那么下面的代码就会出现undefind的问题,这时可以通过callback的方式解决.应用callback的场景,animate函数 ajax nodejs多表查询 .....
+回调机制 异步的时候使用回调 js是单线程语言 一个命令不执行完后面的命令一直等待 
+在nodejs中使用ES6的新特性，需要用v0.11.x以上的版本才行。
+处理代码中的异常也是很简单的，只需要这样就OK了：
+如何优雅的处理Nodejs中的异步回调
+定义通过define(function(require,exports, module){require
+属性放在类下 属性如果放在原型中 以后基于这个类创建的对象如果一个对象改了其他的都会改,但是基本数据类型就不会,所以放在构造函数中,每次创建新对象的时候都会在创建一遍新的 
+应用到一些简单的场景中还是不错的，比如：我们将一个数组中的数据，依次保存到数据库中就可以采用这种方式。
+引用一下fibjs项目宣传的一句话：Less Callback, More Girls - 更少回调, 更多妹子
+总结
+想想如果能够在不使用回调函数的情况下，处理异步，岂不是很爽，接下来，我们谈谈使用ES6的新特性来实现这一目标。
+我们可以使用递归作为代码的执行控制工具。把需要执行的操作封装到一个函数中，在回调函数中通过递归调用控制代码的执行流程，废话不多说，上个代码吧：
+我们将最初的同时读取两个文件的代码使用async处理下，示例如下：
+或者使用其他组件实现减少嵌套的操作
+方法放在原型中
+本文主要是介绍如何优雅的处理以上异步回调问题。
+本文介绍的是使用Generator特性替代回调函数，对Generator不了解？可以看看这里。
+模块开发:
+比较常用的处理异步的库有：async，q还有promise。从npmjs.org网站上来看，async的火热程度最高。以前用过async，确实也挺方便的，各种异步处理的控制流实现的也挺好。
+特权方法 在构造函数中 通过this.的方式创建的
+私有方法 在构造函数中声明的内部函数 在外面访问不到 只有在内部才可以使用 
+话说EcmaScript Harmony (ES6)给js引入了不少新特性，对ES6不太了解的同学，可以自行百度一下。
+调试困难
+还是以本文刚开始提到的问题为例，使用generator特性的实例代码如下：
+这种代码是不是优雅很多了？像写同步代码一样处理异步，是不是很爽！
+这种层层嵌套的代码给开发带来了很多问题，主要体现在：
+这里用到了co和thunkify两个模块，大家使用npm install命令安装之。
+通过async模块，可以很好的控制异步的执行流程了，也算是解决了层层回调的问题，代码比以前算是清晰了些，不过依旧还是离不开回调函数。
+通过递归的方式可以解决一些简单的异步回调问题。不过对于处理复杂的异步回调还是显得有些无能为力（如需要同步多个异步操作的结果）。
+遵循commonjs规范 
+那要是处理多个类似的场景，岂不是回调函数一层层的嵌套啊，这就是大家常说的回调金字塔或回调地狱（http://callbackhell.com/）的问题，也是让js小白最为头疼的问题。
+那，我们读取两个文件，将这两个文件的内容合并到一起处理怎么办呢?大多数接触js不久的人可能会这么干：
+静态方法 类名.方法 调用时通过类名.方法()进行调用 在静态方法中永远不会出现this方法类似于java的static 方法 
+面向对象创建类用一个函数回来创建 特点是首字母大写 在类里面使用this添加属性 没有返回值哦 构造函数是没有return的 因为特通过new关键字可以直接得到一个对象
+
+
+请求有七种 
+请求头
+响应头给客户端浏览器看的
+
+express 类似于php的模块 内部融合许多其他的2模块 可以完成快速的web开发
+express是node官方推荐框架 之后除了node以外还有其他
+condejs.org 是国内的nide论坛 
+任何包都是通过npminstall命令安装
