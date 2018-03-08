@@ -1,0 +1,117 @@
+前置知识
+node相关知识
+mpn操作
+了解html css js基础
+es6语法基础
+
+vuejs功能讲解
+vuejs实际项目开发
+
+
+轻量级的前端界面框架
+2016年10月份发布2.0 更强大更快速
+
+数据渲染数据同步 js数据如何渲染到界面
+组件化模块化
+其他功能 路由 ajax 数据流  
+vue会将 组件里面的内容渲染到前端页面上
+通过vue可以将前端页面渲染城组件进行复用
+
+路由功能 前端路由指的是在地址栏中输入不同地址进行页面切换 
+vue 的路由可以实通过页面点击的方式进行切换路由,这种切换是前端单页面的路由,实现机制是组件的切换
+
+vuejs学习资源 中文官网 由于西 官方工具 github  vue官方论坛
+
+
+vuejs实例对象 
+引入vue.js之后会存在一个vue
+对象,通过new Vue的方式可以完成实例化对象
+new Vue({}) 构造函数
+内部的是构造参数 
+el data等是参数对象 
+
+
+
+el指的是一个将对象所装载的位置
+templete html代码  我们将使用的模板
+data 数据引入, data中的数据会被代理到实例对象当中,即var my = new Vue({中的data:{eat:'apple'}中的数据})可以直接通过my.eat的方式进行调用
+
+
+实例的生命周期 在vue不同阶段 可以通过事件钩子进行特定交互 2.0相对于1.0取消了一些钩子
+我们咋渲染之后需要做一些事情,就需要用到事件钩子 事件钩子还是很重要的
+
+
+
+main.js是入口文件 先声明一个根组件,里面写着对象引入 import Vue form 'vue' es6写法 将vue库引入并赋给Vue对象 中相当于类似于之前使用的require()
+数据是放在data中渲染通过双花括号放在templete中,或者放在html文件中
+另一个比较重要的文件是index.html
+
+
+
+组价注册和引入 实现组件树结构
+
+常用vue.component('my-header',{
+	templete:'<p>this is my header</p>'
+})
+在html文件中可以直接使用<my-header></my-header>进行内容渲染
+
+在组件树构建的过程中需要注意一点 data尽量避免引用赋值即data{aa:'11',bb:'22',cc:'33'}这种形式会导致一个组件的data数据改变了其他的组件的数据也都跟着改变 
+解决方法就是在data赋值的时候通过data:function(){return{d:'1',c:'2',a:'3'}}再返回data,data:function(){return{d:'1',c:'2',a:'3'}}可以改写成data(){}的形式
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+vue基本概念
+全局qpi
+实例选项
+实力属性/实例方法
+指令
+内置组件
+
+
+全局api 是vue实例对象提供的全局方法
+Vue.extend 是用于拓展vue构造器的方法
+Vue.set 给全局vue设置属性
+Vue.component是添加全剧组件
+Vue.use 使用Vue router vueX时需要使用Vue.use注册插件
+
+实例选项
+创建组件的时候传入的对象 
+分为
+data
+	data
+	computed
+	methods
+	watch
+dom	
+	el
+	templete
+	render
+生命周期钩子

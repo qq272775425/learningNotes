@@ -6,7 +6,7 @@ css3兼容性写法 -wenkit-
 css参考手册 css.doyoe.com 
 选择器  
 
-英文不换行问题： world-break: break-all;
+英文不换行问题： word-break: break-all;
 为对象选择器 
 伪类选择器 已存在对象加样式
 ：after{} 插入行元素 
@@ -26,7 +26,7 @@ text-overflow:ellipsis;}
 
 网络字体
 @font-face{
-	
+	不适用于汉字只适用于英文 因为汉字多
 }
 
 边框
